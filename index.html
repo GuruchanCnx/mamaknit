@@ -2,21 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mama Knit Pro - Professional Knitting Pattern Designer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Mama Knit Pro - Modern Knitting Companion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Modern UI Design System */
         :root {
             --primary: #8B4513;
+            --primary-light: #A0522D;
             --secondary: #4682B4;
             --accent: #32CD32;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --info: #17a2b8;
+            
+            /* Modern Glass Design Colors */
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --glass-bg-dark: rgba(30, 30, 30, 0.9);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --glass-border-dark: rgba(255, 255, 255, 0.15);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --glass-shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.3);
+            
+            --system-gray: #8E8E93;
+            --system-gray2: #AEAEB2;
+            --system-gray3: #C7C7CC;
+            --system-gray4: #D1D1D6;
+            --system-gray5: #E5E5EA;
+            --system-gray6: #F2F2F7;
+            
+            --system-blue: #007AFF;
+            --system-green: #34C759;
+            --system-red: #FF3B30;
+            --system-yellow: #FF9500;
+            --system-orange: #FF9F0A;
+            --system-purple: #AF52DE;
+            --system-pink: #FF2D55;
+            --system-indigo: #5E5CE6;
+            
             --text-primary: #1C1C1E;
             --text-secondary: #8E8E93;
-            --background: #f5f5f7;
-            --card-bg: #ffffff;
-            --border: #D1D1D6;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            --gradient-start: #8B4513;
-            --gradient-end: #4682B4;
+            --text-tertiary: #C7C7CC;
+            --text-quaternary: #D1D1D6;
+            
+            --text-primary-dark: #FFFFFF;
+            --text-secondary-dark: #8E8E93;
+            --text-tertiary-dark: #636366;
+            --text-quaternary-dark: #48484A;
+        }
+
+        .dark-mode {
+            --glass-bg: var(--glass-bg-dark);
+            --glass-border: var(--glass-border-dark);
+            --glass-shadow: var(--glass-shadow-dark);
+            --text-primary: var(--text-primary-dark);
+            --text-secondary: var(--text-secondary-dark);
+            --text-tertiary: var(--text-tertiary-dark);
+            --text-quaternary: var(--text-quaternary-dark);
+            background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+            color: var(--text-primary);
         }
 
         * {
@@ -26,26 +72,27 @@
         }
 
         body {
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: var(--background);
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f5f7, #e8e8ec);
             color: var(--text-primary);
             line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            padding-bottom: env(safe-area-inset-bottom);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 16px;
         }
 
-        /* Header with Logo */
+        /* Modern Header with Logo */
         header {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 40px 20px;
-            text-align: center;
+            padding: 24px 0;
             position: relative;
             overflow: hidden;
         }
@@ -53,10 +100,11 @@
         .logo-container {
             position: relative;
             z-index: 2;
+            text-align: center;
         }
 
         .logo-text {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 10px;
@@ -80,6 +128,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
+            z-index: 1;
         }
 
         .decoration-item {
@@ -89,8 +138,8 @@
         }
 
         .yarn-ball {
-            width: 40px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, #FF6347, #4682B4);
             border-radius: 50%;
             top: 20%;
@@ -98,8 +147,8 @@
         }
 
         .knitting-needle {
-            width: 60px;
-            height: 8px;
+            width: 80px;
+            height: 10px;
             background: linear-gradient(135deg, #8B4513, #A0522D);
             transform: rotate(45deg);
             top: 70%;
@@ -107,8 +156,8 @@
         }
 
         .leaf {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, #32CD32, #20c997);
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
             top: 10%;
@@ -121,8 +170,11 @@
             justify-content: center;
             gap: 30px;
             padding: 20px 0;
-            background: var(--card-bg);
-            box-shadow: var(--shadow);
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -135,15 +187,18 @@
             padding: 10px 20px;
             border-radius: 20px;
             transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .nav-item:hover {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
         }
 
         .nav-item.active {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
         }
 
@@ -151,8 +206,11 @@
         .hero-section {
             padding: 60px 20px;
             text-align: center;
-            background: var(--card-bg);
-            box-shadow: var(--shadow);
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
             margin: 30px 0;
             border-radius: 20px;
         }
@@ -175,7 +233,7 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 15px 30px;
             border-radius: 30px;
@@ -193,7 +251,7 @@
         }
 
         .feature-highlight {
-            background: linear-gradient(135deg, #32CD32, #20c997);
+            background: linear-gradient(135deg, var(--accent), #20c997);
             color: white;
             padding: 15px 30px;
             border-radius: 30px;
@@ -206,8 +264,11 @@
         /* Features Section */
         .features-section {
             padding: 60px 20px;
-            background: var(--card-bg);
-            box-shadow: var(--shadow);
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
             margin: 30px 0;
             border-radius: 20px;
         }
@@ -227,11 +288,13 @@
         }
 
         .feature-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 30px;
-            box-shadow: var(--shadow);
+            box-shadow: var(--glass-shadow);
             transition: transform 0.3s ease;
         }
 
@@ -261,8 +324,11 @@
         /* App Preview Section */
         .app-preview-section {
             padding: 60px 20px;
-            background: var(--card-bg);
-            box-shadow: var(--shadow);
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
             margin: 30px 0;
             border-radius: 20px;
         }
@@ -332,7 +398,7 @@
         .phone-app-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -408,7 +474,7 @@
         }
 
         .row-counter {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 10px 15px;
             border-radius: 20px;
@@ -438,8 +504,9 @@
         /* Pricing Section */
         .pricing-section {
             padding: 60px 20px;
-            background: var(--card-bg);
-            box-shadow: var(--shadow);
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             margin: 30px 0;
             border-radius: 20px;
         }
@@ -459,29 +526,29 @@
         }
 
         .pricing-card {
-            background: var(--card-bg);
+            background: var(--glass-bg);
             border: 2px solid var(--border);
             border-radius: 20px;
             padding: 30px;
-            box-shadow: var(--shadow);
+            box-shadow: var(--glass-shadow);
             transition: transform 0.3s ease;
         }
 
         .pricing-card.popular {
-            border-color: var(--gradient-start);
+            border-color: var(--primary);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .pricing-card.popular .plan-name {
-            color: var(--gradient-start);
+            color: var(--primary);
         }
 
         .pricing-card.popular .price {
-            color: var(--gradient-start);
+            color: var(--primary);
         }
 
         .pricing-card.popular .cta-button {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
         }
 
@@ -527,7 +594,7 @@
         }
 
         .cta-button.primary {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
         }
 
@@ -554,7 +621,7 @@
         }
 
         .footer-link:hover {
-            color: var(--gradient-start);
+            color: var(--primary);
         }
 
         /* Mobile Responsive */
@@ -572,22 +639,18 @@
                 gap: 10px;
             }
             
-            .app-preview-container {
-                flex-direction: column;
-                gap: 20px;
+            .container {
+                padding: 10px;
             }
             
-            .phone-frame {
-                width: 280px;
-                height: 560px;
+            .section {
+                padding: 20px;
             }
             
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-cards {
-                grid-template-columns: 1fr;
+            .help-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
             }
         }
 
@@ -840,11 +903,11 @@
                     <li><span class="check-icon">✓</span> Unlock all tools</li>
                     <li><span class="check-icon">✓</span> Convert images to color charts</li>
                     <li><span class="check-icon">✓</span> Written instructions for designed charts</li>
-                    <li><span class="check-icon">✓</span> Create custom colors</li>
+                    <li><span class="check-icon">✓</span> Create your own colors</li>
                     <li><span class="check-icon">✓</span> Unlock all knit symbols</li>
                     <li><span class="check-icon">✓</span> Create patterns up to 500x500</li>
-                    <li><span class="check-icon">✓</span> Generate PDFs for your charts</li>
-                    <li><span class="check-icon">✓</span> Reuse designs with Designs Library</li>
+                    <li><span class="check-icon">✓</span> Generate a PDF for your charts</li>
+                    <li><span class="check-icon">✓</span> Reuse designs by using the Designs Library</li>
                     <li><span class="check-icon">✓</span> Export high resolution images</li>
                     <li><span class="check-icon">✓</span> Draw text notes on top of PDF files</li>
                 </ul>
@@ -863,36 +926,5 @@
         </div>
         <p>&copy; 2023 Mama Knit Pro. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Simple JavaScript to add some interactivity
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add animation to some chart cells
-            const cells = document.querySelectorAll('.chart-cell');
-            const animatedCells = Array.from(cells).slice(0, 10);
-            animatedCells.forEach(cell => {
-                cell.classList.add('animated-cell');
-            });
-            
-            // Make navigation items interactive
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    navItems.forEach(i => i.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-            
-            // Make CTA buttons work
-            const ctaButtons = document.querySelectorAll('.cta-button');
-            ctaButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('This is a demo version. In the full app, this would take you to the next step!');
-                });
-            });
-        });
-    </script>
 </body>
 </html>
